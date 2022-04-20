@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Box, Container, Typography } from "@mui/material"
 import ChoiceList from "../ChoiceList"
 import Answer from "../answer"
+import QuestionImg from "../questionImg"
 
 const Quiz = ({ datum }) => {
 
@@ -41,12 +42,12 @@ const Quiz = ({ datum }) => {
 
 
   return (
-    <Box>
-      <Typography>
+    <Box sx={{mt: 6, mb: 6, mx:'auto', width:'70%'}}>
+      <Typography sx={{mb: 2, fontWeight: 'bold', fontSize: "24px"}}>
         { id }. この地名はなんて読む?
       </Typography>
       <Box>
-        <img src={`/img/kuizy${('0' + id).slice(-2)}.png`} width="620" />
+        <QuestionImg questionId={id} />
       </Box>
       <Box sx={{width: '100%'}}>
         <ChoiceList
